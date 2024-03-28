@@ -12,7 +12,10 @@ PS1='\[\e[38;2;101;133;148m\][\u@${WSL_DISTRO_NAME} \W]\$ \[\e[0m\]'
 
 [[ -e /usr/sbin/neofetch ]] && printf "\e[?12h" #&& neofetch
 
-
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 
 
