@@ -12,7 +12,7 @@ date_now() {
 ### kanagawa dragonGreen = "#87a987" 
 ### dragonBlue = "#658594" 101;133;148
 ### dragonRed = "#c4746e" 196;70;110
-PS1='\n$(date_now) \[\e[38;2;101;133;148m\]\u@${HOSTNAME} \[\e[38;2;135;169;135m\]\w\[\e[38;2;196;70;110m\]$(parse_git_branch)\n\[\e[0m\]\$ '
+PS1='$(date_now) \[\e[38;2;101;133;148m\]\u@${HOSTNAME} \[\e[38;2;135;169;135m\]\w\[\e[38;2;196;70;110m\]$(parse_git_branch)\n\[\e[0m\]\$ '
 
 # echo -ne "\x1b[2"
 
@@ -28,6 +28,7 @@ alias cls="clear"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 
 # nvm
