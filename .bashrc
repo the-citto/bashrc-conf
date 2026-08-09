@@ -17,12 +17,27 @@ PS1='$(date_now) \[\e[38;2;101;133;148m\]\u@${HOSTNAME} \[\e[38;2;135;169;135m\]
 # echo -ne "\x1b[2"
 
 alias cls="clear"
+alias sas="kitten ssh arch-server"
 
 # ls colors autoload
 # [[ -e ~/.config/bashrc/.dircolors ]] && eval "`dircolors --sh ~/.config/bashrc/.dircolors`"
 
 
 # [[ -e /usr/sbin/neofetch ]] && printf "\e[?12h" #&& neofetch
+
+# autocompletes
+for _ in \
+    deno \
+    git \
+    just \
+    pacman \
+    podman \
+    terraform \
+    uv \
+    ; do
+    [[ -e /usr/share/bash-completion/completions/$_ ]] && source /usr/share/bash-completion/completions/$_
+done
+
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -31,10 +46,13 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 
-# nvm
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh 2> /dev/null
-source /usr/share/nvm/bash_completion 2> /dev/null
-source /usr/share/nvm/install-nvm-exec 2> /dev/null
+# # nvm
+# [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+# source /usr/share/nvm/nvm.sh 2> /dev/null
+# source /usr/share/nvm/bash_completion 2> /dev/null
+# source /usr/share/nvm/install-nvm-exec 2> /dev/null
+
+# cargo installed
+export PATH="$HOME/.cargo/bin:$PATH"
 
 
