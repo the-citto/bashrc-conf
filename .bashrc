@@ -27,11 +27,13 @@ alias sas="kitten ssh arch-server"
 
 # autocompletes
 for _ in \
+    cargo \
     deno \
     git \
     just \
     pacman \
     podman \
+    rustup \
     terraform \
     uv \
     ; do
