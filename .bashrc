@@ -28,6 +28,7 @@ alias sas="kitten ssh arch-server"
 # autocompletes
 for _ in \
     cargo \
+    cmake \
     deno \
     git \
     just \
